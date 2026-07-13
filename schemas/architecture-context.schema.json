@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/schemas/architecture-context.schema.json",
+  "title": "Architecture Context",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "problem": { "type": "string", "minLength": 1 },
+    "facts": { "type": "array", "items": { "type": "string" } },
+    "constraints": { "type": "array", "items": { "type": "string" } },
+    "assumptions": { "type": "array", "items": { "type": "string" } },
+    "unknowns": { "type": "array", "items": { "type": "string" } },
+    "components": { "type": "array", "items": { "type": "string" } },
+    "candidate_decisions": { "type": "array", "items": { "type": "string" } }
+  },
+  "required": ["problem"]
+}

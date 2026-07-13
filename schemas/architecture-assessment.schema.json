@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/schemas/architecture-assessment.schema.json",
+  "title": "Architecture Assessment",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "executive_summary": { "type": "string" },
+    "architecture_significance": { "type": "object" },
+    "facts_constraints_assumptions_unknowns": { "type": "object" },
+    "architecture_characteristics": { "type": "array" },
+    "boundary_findings": { "type": "array" },
+    "tradeoffs": { "type": "array" },
+    "recommendation": { "type": "object" },
+    "fitness_functions": { "type": "array" },
+    "decisions_to_record": { "type": "array" },
+    "open_questions": { "type": "array" }
+  },
+  "required": [
+    "executive_summary",
+    "architecture_significance",
+    "facts_constraints_assumptions_unknowns",
+    "architecture_characteristics",
+    "boundary_findings",
+    "tradeoffs",
+    "recommendation",
+    "fitness_functions",
+    "decisions_to_record",
+    "open_questions"
+  ]
+}
