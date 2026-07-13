@@ -62,11 +62,47 @@ architecture_significance:
     - changes_execution_boundary
     - changes_failure_domain
 
-facts: []
-constraints: []
-assumptions: []
-unknowns: []
+
+evidence:
+  facts: []
+  constraints: []
+  assumptions: []
+  unknowns: []
+
+provenance:
+  - statement: production execution uses Semaphore
+    source_type: repository_evidence
+    source: docs/architecture/execution.md
+
+  - statement: this changes the execution boundary
+    source_type: inference
+    derived_from:
+      - production execution uses Semaphore
+
 ```
+
+## Context provenance
+
+Maintain strict provenance between the skill contract and the system context being assessed.
+
+Classify information sources as:
+
+- `skill_rule`: normative instruction defined by this skill;
+- `repository_evidence`: information directly observed in repository files;
+- `user_evidence`: information explicitly supplied by the user;
+- `external_evidence`: information obtained from authoritative external sources;
+- `inference`: a conclusion derived from one or more evidence sources.
+
+Never describe repository-specific context as a rule or criterion implemented by this skill.
+
+When explaining the skill itself, use only `skill_rule` evidence unless the user explicitly asks how the skill applies to the current repository.
+
+When applying the skill to a repository, clearly separate:
+
+1. the skill's normative criteria;
+2. repository evidence;
+3. resulting inference.
+
 
 ## Behavioral constraints
 
@@ -74,3 +110,7 @@ unknowns: []
 - Do not equate complexity with architectural significance.
 - Do not manufacture requirements to justify deeper analysis.
 - State when the evidence is insufficient.
+- Do not merge repository-specific facts into the description of this skill's normative criteria.
+- Preserve provenance when moving from evidence to inference.
+- When asked to explain this skill, do not activate unrelated domain skills unless explicitly required.
+
