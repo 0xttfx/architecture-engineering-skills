@@ -81,6 +81,27 @@ boundary_findings:
       - security
 ```
 
+## Authority discipline
+
+Do not infer authority from participation, data provision,
+execution capability, or workflow position.
+
+Distinguish:
+
+- `provider`: supplies information or capability;
+- `producer`: creates an intent, event, artifact, or record;
+- `decision_authority`: has authority to choose an outcome;
+- `enforcement_authority`: may allow or deny an action;
+- `execution_authority`: performs the action;
+- `state_authority`: owns the authoritative state;
+- `precedence_authority`: resolves conflicting intents or states.
+
+A component may hold more than one authority, but each authority
+must be supported by explicit evidence or classified as inferred.
+
+When multiple producers can affect the same execution target,
+identify unresolved precedence authority.
+
 ## Behavioral constraints
 
 - Do not invent a service boundary because two responsibilities have different names.

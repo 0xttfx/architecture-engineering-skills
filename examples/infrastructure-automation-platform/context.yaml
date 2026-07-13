@@ -1,0 +1,17 @@
+Model the following proposed infrastructure automation architecture:
+
+- DroneCI validates Git-driven infrastructure changes.
+- Semaphore is the controlled execution plane for Terraform and Ansible.
+- Infrahub provides infrastructure context, topology, and resource relationships.
+- Ansible EDA consumes operational events, interprets them, and selects registered remediations.
+- Git-driven changes flow through DroneCI before execution.
+- Runtime events do not flow through DroneCI.
+- Both Git-driven execution and event-driven remediation may converge on Semaphore.
+- Production execution must be auditable.
+- Remediations must be pre-registered.
+- DroneCI and Ansible EDA must not hold production execution credentials.
+
+Use $architecture-thinking to classify facts, constraints, assumptions, decisions, and unknowns.
+
+Do not perform trade-off analysis yet.
+Do not select architecture styles or patterns.
