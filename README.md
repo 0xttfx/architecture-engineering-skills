@@ -62,6 +62,28 @@ architecture-engineering-skills/
     └── reasoning-model.md
 ```
 
+## Install in a consumer repository
+
+Add this repository to the consumer project, for example as a Git submodule under `.agents/vendor/architecture-engineering-skills`, then run:
+
+```bash
+./.agents/vendor/architecture-engineering-skills/scripts/install-repo.sh
+```
+
+The installer exposes every valid skill through `.agents/skills` using portable relative symlinks. It is idempotent and fails on conflicting files, conflicting symlinks, or broken skill links instead of overwriting them.
+
+To target another Git working tree explicitly:
+
+```bash
+./scripts/install-repo.sh /path/to/consumer-repository
+```
+
+Validate discovery with:
+
+```bash
+find -L .agents/skills -maxdepth 2 -name SKILL.md -print
+```
+
 ## Scope of the first milestone
 
 This milestone deliberately excludes architecture-style and pattern skills. Layered architecture, service-based architecture, event-driven architecture, microservices, modular monoliths, microkernel architecture, and related patterns should be introduced only after the core reasoning workflow is stable.
